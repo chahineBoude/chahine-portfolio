@@ -13,6 +13,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        Kufi: ["Reem Kufi Fun", "sans-serif"],
+        SF: ["Sixtyfour", "sans-serif"],
+        teko: ["Teko", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
+      },
+      colors: {
+        background: "#2a2438",
+        btnColor1: "#363b4e",
+        btnColor2: "#fffc3a",
+        textHighlight: "#8983f3",
+        card: "#40355e",
+      },
     },
   },
   plugins: [],
