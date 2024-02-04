@@ -1,14 +1,18 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import schemas from "./sanity/schemas";
+import { visionTool } from "@sanity/vision";
 
-const config = defineConfig({
-  projectId: "jlpwc9iu",
-  dataset: "production",
-  title: "Chahine's portfolio",
+const configParams = {
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_PROJECT_DATASET!,
+  title: process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE,
   basePath: "/admin",
-  plugins: [structureTool()],
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_PROJECT_API_VERSION,
+  plugins: [structureTool(), visionTool()],
   schema: { types: schemas },
-});
+};
+
+const config = defineConfig(configParams);
 
 export default config;

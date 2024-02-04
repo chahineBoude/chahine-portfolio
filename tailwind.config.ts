@@ -21,6 +21,7 @@ const config: Config = {
       },
       colors: {
         background: "#2a2438",
+        scrollbar: "#6c5fa7",
         btnColor1: "#363b4e",
         btnColor2: "#fffc3a",
         textHighlight: "#8983f3",
@@ -28,6 +29,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
 export default config;

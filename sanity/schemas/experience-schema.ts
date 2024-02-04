@@ -45,7 +45,7 @@ const experience = {
       name: "stack",
       title: "Stack",
       type: "array",
-      of: [{ type: "string" }],
+      of: [{ type: "reference", to: { type: "skill" } }],
     },
   ],
 };

@@ -1,12 +1,9 @@
+import { Experience } from "@/types/Experience";
 import { createClient, groq } from "next-sanity";
+import clientConfig from "../config/client-config";
 
-export async function getExperience() {
-  const client = createClient({
-    projectId: "jlpwc9iu",
-    dataset: "production",
-  });
-
-  return client.fetch(
+export async function getExperience(): Promise<Experience[]> {
+  return createClient(clientConfig).fetch(
     groq`*[_type == "experience"]{
         _id,
         _createdAt,
@@ -16,7 +13,7 @@ export async function getExperience() {
         dateStarted,
         dateEnded,
         isCurrentlyWorking,
-        stack
+        stack[]->
     }`
   );
 }

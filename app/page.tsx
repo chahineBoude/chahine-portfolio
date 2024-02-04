@@ -1,16 +1,17 @@
+import { getExperience, getSkills } from "@/sanity/utils";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Skills from "./components/Skills";
 
-export default function Home() {
-  /*   const { ref, inView } = useInView({
-    threshold: 0,
-    delay: 100,
-  }); */
+export default async function Home() {
+  const experience = await getExperience();
+  const skills = await getSkills();
+
   return (
     <main>
-      <div className="bg-background h-screen text-white lg:snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth">
+      <div className="bg-background h-screen text-white lg:snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
         <Header />
         <section id="Hero" className="snap-start">
           <Hero />
@@ -21,7 +22,10 @@ export default function Home() {
           </div>
         </section>
         <section id="Experience" className="snap-center">
-          <Experience />
+          <Experience experience={experience} />
+        </section>
+        <section id="Skills" className="snap-center">
+          <Skills skills={skills} />
         </section>
       </div>
     </main>
