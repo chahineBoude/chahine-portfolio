@@ -18,6 +18,8 @@ const config: Config = {
         SF: ["Sixtyfour", "sans-serif"],
         teko: ["Teko", "sans-serif"],
         orbitron: ["Orbitron", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        noto: ["Noto", "sans-serif"],
       },
       colors: {
         background: "#2a2438",

@@ -1,60 +1,49 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCancelCircle } from "react-icons/im";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 type Props = {};
 
 export default function Header({}: Props) {
   const [showMenu, setShowMenu] = useState(false);
-  const [isNotOnHero, setHero] = useState("");
 
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };
 
-  useEffect(() => {
-    const heroCheck = localStorage.getItem("outOfHero") as string;
-    console.log(heroCheck);
-
-    if (heroCheck != null) {
-      setHero(heroCheck);
-    }
-  }, []);
-
   return (
     <nav className="sticky top-0 z-40">
-      <div
-        className={`${
-          showMenu ? "hidden" : "flex"
-        }  flex-wrap items-center justify-between mx-4 lg:mx-8 p-4`}
-      >
+      <div className="flex flex-wrap items-center justify-between mx-4 lg:mx-8 p-4">
         <Link className="text-3xl lg:text-5xl font-Kufi" href="#Hero">
           شَاهِينْ بُودْمَاغْ
         </Link>
-        <div className={`${isNotOnHero === "true" ? "block" : "hidden"} `}>
-          <ul className="hidden md:flex justify-between items-center text-3xl font-teko">
-            <li className="mx-4 cursor-pointer hover:text-textHighlight">
-              <Link href="#About">About</Link>
-            </li>
-            <li className="mx-4 cursor-pointer hover:text-textHighlight">
-              <Link href="#About">Experience</Link>
-            </li>
-            <li className="mx-4 cursor-pointer hover:text-textHighlight">
-              <Link href="#About">Skills</Link>
-            </li>
-            <li className="ml-4 cursor-pointer hover:text-textHighlight">
-              <Link href="#About">Projects</Link>
-            </li>
-          </ul>
-          <GiHamburgerMenu
-            className="md:hidden text-4xl hover:text-slate-400"
-            onClick={handleShowMenu}
-          />
+        <div className="hidden md:flex text-4xl w-1/12 justify-end">
+          <Link
+            href={process.env.NEXT_PUBLIC_LINKEDIN_PROFILE!}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="cursor-default"
+          >
+            <FaLinkedin className="hover:text-textHighlight mr-4 cursor-pointer" />
+          </Link>
+          <Link
+            href={process.env.NEXT_PUBLIC_GITHUB_PROFILE!}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="cursor-default"
+          >
+            <FaGithub className="hover:text-textHighlight cursor-pointer" />
+          </Link>
         </div>
+        <GiHamburgerMenu
+          className="md:hidden text-4xl hover:text-slate-400"
+          onClick={handleShowMenu}
+        />
       </div>
       {showMenu && (
         <motion.div
@@ -81,19 +70,19 @@ export default function Header({}: Props) {
               className="hover:text-textHighlight cursor-pointer"
               onClick={handleShowMenu}
             >
-              Experience
+              <Link href="#Experience">Experience</Link>
             </li>
             <li
               className="hover:text-textHighlight cursor-pointer"
               onClick={handleShowMenu}
             >
-              Skills
+              <Link href="#Skills">Skills</Link>
             </li>
             <li
               className="hover:text-textHighlight cursor-pointer"
               onClick={handleShowMenu}
             >
-              Projects
+              <Link href="#About">Projects</Link>
             </li>
           </ul>
         </motion.div>

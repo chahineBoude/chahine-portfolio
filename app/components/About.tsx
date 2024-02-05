@@ -47,8 +47,8 @@ export default function About({}: Props) {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-12 h-screen">
-        <div className="col-span-9 place-self-center text-center sm:text-left row-auto order-last sm:order-first sm:mt-0">
-          <div className="text-white text-5xl lg:text-8xl mb-4 font-extrabold place-self-center">
+        <div className="col-span-9 place-self-center text-center md:text-left row-auto order-last sm:order-first sm:mt-0">
+          <div className="text-white text-5xl lg:text-9xl mb-4 md:mb-0 font-extrabold font-teko tracking-wide">
             <span className="mb-4">
               Hello
               <Typewriter
@@ -102,14 +102,14 @@ export default function About({}: Props) {
               once: true,
             }}
           >
-            <p className="text-gray-300 text-lg lg:text-4xl mb-6">
+            <p className="text-gray-300 text-lg lg:text-4xl mb-6 font-noto">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim,
               ullam nisi expedita sit aperiam voluptates a aspernatur placeat
               quisquam quis velit in vel voluptatum sed. Cum reiciendis fugiat
               sunt explicabo!
             </p>
           </motion.div>
-          <div className="flex flex-col sm:flex-row justify-start font-bold">
+          <div className="flex flex-col sm:flex-row justify-start font-bold font-orbitron">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}

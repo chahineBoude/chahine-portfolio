@@ -47,6 +47,12 @@ const experience = {
       type: "array",
       of: [{ type: "reference", to: { type: "skill" } }],
     },
+    {
+      name: "tasks",
+      title: "Tasks",
+      type: "array",
+      of: [{ type: "string" }],
+    },
   ],
 };
 

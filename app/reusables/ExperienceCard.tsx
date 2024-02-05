@@ -22,52 +22,49 @@ function ExperienceCard({ job }: Props) {
       viewport={{
         once: true,
       }}
-      className="w-screen h-full flex items-center justify-center space-y-7 snap-center p-4 md:p-0 my-4"
+      className="w-screen md:w-[900px] h-[90%] md:h-5/6 flex items-center justify-center space-y-7 snap-center p-4 md:p-0 md:my-4 mx-20"
     >
-      <div className="flex flex-col rounded-3xl justify-start items-center overflow-y-scroll bg-gradient-radial from-background to-card h-full w-full md:w-1/2 p-10 opacity-30 hover:opacity-100 transition-opacity scroll-smooth scrollbar-none scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
-        <div className="mb-4">
+      <div className="flex flex-col rounded-3xl justify-start items-center md:items-start overflow-y-scroll bg-gradient-radial from-background to-card h-full w-full p-10 opacity-30 hover:opacity-100 transition-opacity scroll-smooth scrollbar-none scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
+        <div className="mb-4 place-self-center">
           <Image
             src={job.companyImage}
             alt="about_pic"
-            height={256}
-            width={256}
-            className="h-32 w-32 md:h-64 md:w-64 rounded-xl object-cover"
+            height={160}
+            width={160}
+            className="h-32 w-32 md:w-40 md:h-40  rounded-xl object-cover"
           />
         </div>
-        <div className="px-0 md:pb-5 sm:px-10 flex flex-col justify-center items-center text-center">
-          <h4 className="font-light font-teko text-4xl md:text-6xl ">
-            {job.jobTitle}
-          </h4>
-          <p className="pt-2 font-bold mb-2 text-2xl md:text-3xl">
+        <div className="px-0 md:pb-5 sm:px-10 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+          <h4 className="font-teko text-4xl md:text-6xl ">{job.jobTitle}</h4>
+          <p className="font-teko pt-2 text-2xl md:text-4xl font-extralight tracking-wide">
             {job.company}
           </p>
-          <div>{/* tech used */}</div>
-          <p className="pt-2  md:text-xl">{`${job.dateStarted} TO ${
-            job.isCurrentlyWorking ? "PRESENT" : job.dateEnded
-          }`}</p>
           {job.stack && (
-            <div className="mt-4">
-              <span className="font-teko text-3xl uppercase">tech stack</span>
-              <ul className="flex md:flex-wrap flex-col md:flex-row items-center justify-center list-none text-xl 2xl:text-2xl pt-2 text-left li">
+            <div className="mt-2">
+              <div className="grid grid-cols-4 gap-2">
                 {job.stack.map((tech: Skill) => (
                   <div key={tech._id}>
-                    <li className="my-4 md:my-0 md:mx-10">
-                      <div className="flex justify-items-center items-center uppercase cursor-default font-orbitron text-lg md:text-xl mb-4">
-                        <Image
-                          src={urlFor(tech.skillLogo).url()}
-                          alt="technology"
-                          height={50}
-                          width={50}
-                          className="mr-4"
-                        />
-                        {tech.skillName}
-                      </div>
-                    </li>
+                    <Image
+                      src={urlFor(tech.skillLogo).url()}
+                      alt="technology"
+                      height={30}
+                      width={30}
+                    />
                   </div>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
+          <p className="pt-2 font-extralight md:text-xl font-oswald">{`${
+            job.dateStarted
+          } TO ${job.isCurrentlyWorking ? "PRESENT" : job.dateEnded}`}</p>
+          <ul className="list-disc md:mt-4 text-3xl md:text-4xl ml-4 font-noto tracking-wide w-full">
+            {job.tasks?.map((task: string, i: number) => (
+              <div key={i}>
+                <li className="my-4">{task}</li>
+              </div>
+            ))}
+          </ul>
         </div>
       </div>
     </motion.article>

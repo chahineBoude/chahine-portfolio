@@ -10,4 +10,5 @@ export type Experience = {
   dateEnded: Date;
   isCurrentlyWorking: boolean;
   stack: Skill[];
+  tasks: string[];
 };

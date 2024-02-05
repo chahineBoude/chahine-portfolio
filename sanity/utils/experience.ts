@@ -13,7 +13,8 @@ export async function getExperience(): Promise<Experience[]> {
         dateStarted,
         dateEnded,
         isCurrentlyWorking,
-        stack[]->
+        stack[]->,
+        tasks[]
     }`
   );
 }

@@ -11,12 +11,12 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="bg-background h-screen text-white lg:snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
+      <div className="bg-background h-screen text-white snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
         <Header />
-        <section id="Hero" className="snap-start">
+        <section id="Hero" className="md:snap-start">
           <Hero />
         </section>
-        <section id="About" className="snap-end">
+        <section id="About" className="md:snap-end">
           <div className="mx-auto px-12 lg:px-[55px] z-10 w-full">
             <About />
           </div>
@@ -24,7 +24,7 @@ export default async function Home() {
         <section id="Experience" className="snap-center">
           <Experience experience={experience} />
         </section>
-        <section id="Skills" className="snap-center">
+        <section id="Skills" className="md:snap-center">
           <Skills skills={skills} />
         </section>
       </div>
