@@ -19,7 +19,7 @@ const config: Config = {
         teko: ["Teko", "sans-serif"],
         orbitron: ["Orbitron", "sans-serif"],
         oswald: ["Oswald", "sans-serif"],
-        noto: ["Noto", "sans-serif"],
+        archivo: ["Archivo", "sans-serif"],
       },
       colors: {
         background: "#2a2438",

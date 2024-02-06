@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Skill } from "@/types/Skills";
 import urlFor from "@/sanity/utils/image-util";
 import { Experience } from "@/types/Experience";
+import { StarsCanvasExp } from "../components/StarsBackground";
 
 type Props = {
   job: Experience;
@@ -24,7 +25,8 @@ function ExperienceCard({ job }: Props) {
       }}
       className="w-screen md:w-[900px] h-[90%] md:h-5/6 flex items-center justify-center space-y-7 snap-center p-4 md:p-0 md:my-4 mx-20"
     >
-      <div className="flex flex-col rounded-3xl justify-start items-center md:items-start overflow-y-scroll bg-gradient-radial from-background to-card h-full w-full p-10 opacity-30 hover:opacity-100 transition-opacity scroll-smooth scrollbar-none scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
+      <div className="flex flex-col relative rounded-xl justify-start items-center md:items-start overflow-y-scroll md:bg-[url('/LooperGroup2.png')] md:bg-cover h-full w-full p-10 opacity-20 hover:opacity-100 transition-opacity scroll-smooth scrollbar-none scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
+        <StarsCanvasExp />
         <div className="mb-4 place-self-center">
           <Image
             src={job.companyImage}
@@ -58,7 +60,7 @@ function ExperienceCard({ job }: Props) {
           <p className="pt-2 font-extralight md:text-xl font-oswald">{`${
             job.dateStarted
           } TO ${job.isCurrentlyWorking ? "PRESENT" : job.dateEnded}`}</p>
-          <ul className="list-disc md:mt-4 text-3xl md:text-4xl ml-4 font-noto tracking-wide w-full">
+          <ul className="md:list-disc md:mt-4 text-3xl md:text-4xl ml-4 font-archivo tracking-wide w-full">
             {job.tasks?.map((task: string, i: number) => (
               <div key={i}>
                 <li className="my-4">{task}</li>

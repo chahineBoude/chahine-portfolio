@@ -8,7 +8,7 @@ type Props = {
 
 async function Experience({ experience }: Props) {
   return (
-    <div className="relative h-screen flex flex-col justify-center items-center">
+    <div className="relative h-screen flex flex-col justify-center items-center bg-[url('/LooperGroup2.png')] bg-cover bg-center md:bg-none">
       <div className="hidden md:block uppercase text-6xl tracking-widest font-teko absolute top-16 text-center w-full ">
         <h3>Work experience</h3>
       </div>

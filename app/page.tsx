@@ -10,8 +10,8 @@ export default async function Home() {
   const skills = await getSkills();
 
   return (
-    <main>
-      <div className="bg-background h-screen text-white snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
+    <main className="background-gradient bg-[url('/LooperGroup2.png')] bg-no-repeat h-screen text-white snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
+      <div>
         <Header />
         <section id="Hero" className="md:snap-start">
           <Hero />
@@ -21,7 +21,7 @@ export default async function Home() {
             <About />
           </div>
         </section>
-        <section id="Experience" className="snap-center">
+        <section id="Experience" className="md:snap-center">
           <Experience experience={experience} />
         </section>
         <section id="Skills" className="md:snap-center">
