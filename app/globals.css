@@ -27,8 +27,8 @@
   background: radial-gradient(
     circle at top center,
     hsla(258, 22%, 18%) 2%,
-    hsla(257, 21%, 13%) 15%,
-    hsla(222, 0%, 0%, 0) 55%
+    hsla(257, 21%, 13%) 25%,
+    hsla(222, 0%, 0%, 0) 65%
   );
 }
 
@@ -58,7 +58,7 @@ body {
 
 @layer components {
   .customButton {
-    @apply px-3 md:px-10 md:mx-3 py-2 border border-transparent rounded-full uppercase text-lg lg:text-3xl tracking-widest text-gray-500 transition-all hover:border hover:border-btnColor2/40 hover:text-btnColor2/40 hover:bg-background;
+    @apply px-3 md:px-10 md:mx-3 py-2 border border-transparent rounded-full uppercase text-lg lg:text-3xl tracking-widest text-gray-500 transition-all hover:border hover:border-btnColor2/40 hover:text-btnColor2/40;
   }
 
   .customButton1 {

@@ -119,7 +119,7 @@ export default function About({}: Props) {
               }}
             >
               <button className="customButton1 w-full mb-4 sm:mb-0">
-                Learn More
+                Contact me
               </button>
             </motion.div>
             <motion.div

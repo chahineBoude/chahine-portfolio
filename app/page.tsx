@@ -1,13 +1,15 @@
-import { getExperience, getSkills } from "@/sanity/utils";
+import { getExperience, getProject, getSkills } from "@/sanity/utils";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 export default async function Home() {
   const experience = await getExperience();
   const skills = await getSkills();
+  const projects = await getProject();
 
   return (
     <main className="background-gradient bg-[url('/LooperGroup2.png')] bg-no-repeat h-screen text-white snap-y lg:snap-mandatory overflow-y-scroll z-0 overflow-x-hidden scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-scrollbar/70">
@@ -26,6 +28,9 @@ export default async function Home() {
         </section>
         <section id="Skills" className="md:snap-center">
           <Skills skills={skills} />
+        </section>
+        <section id="Projects" className="md:snap-center">
+          <Projects projects={projects} />
         </section>
       </div>
     </main>
